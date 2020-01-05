@@ -1,6 +1,8 @@
 0.0.0.0:2020
 
-proxy / http://pencil-ml-frontend:3000
+proxy / http://pencil-ml-frontend:3000 {
+  transparent
+}
 
 proxy /pencil-ml-backend http://pencil-ml-backend:8080 {
   without /pencil-ml-backend
