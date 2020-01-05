@@ -1,0 +1,11 @@
+0.0.0.0:2020
+
+proxy / http://pencil-ml-frontend:3000
+
+proxy /pencil-ml-backend http://pencil-ml-backend:8080 {
+  without /pencil-ml-backend
+  transparent
+}
+
+log stdout
+errors stdout
