@@ -24,7 +24,10 @@ services:
     environment:
       - PENCIL_ML_BACKEND_HOST=/pencil-ml-backend
   gw:
-    image: abiosoft/caddy
+    image: abiosoft/caddy:no-stats
+    restart: always
+    healthcheck:
+      test: nc -z localhost 2020 || exit 1
     volumes:
       - ./Caddyfile:/etc/Caddyfile
     ports:
